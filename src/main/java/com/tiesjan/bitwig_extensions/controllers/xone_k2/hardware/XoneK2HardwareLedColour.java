@@ -1,4 +1,4 @@
-package com.tiesjan.bitwig_extensions.controllers.xone.hardware;
+package com.tiesjan.bitwig_extensions.controllers.xone_k2.hardware;
 
 import com.tiesjan.bitwig_extensions.shared.midi.MidiByte;
 

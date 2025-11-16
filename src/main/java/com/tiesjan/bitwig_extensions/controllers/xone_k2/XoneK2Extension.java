@@ -1,4 +1,4 @@
-package com.tiesjan.bitwig_extensions.controllers.xone;
+package com.tiesjan.bitwig_extensions.controllers.xone_k2;
 
 import java.util.List;
 
@@ -9,12 +9,12 @@ import com.bitwig.extension.controller.ControllerExtensionDefinition;
 import com.bitwig.extension.controller.api.ControllerHost;
 import com.bitwig.extension.controller.api.MidiIn;
 import com.bitwig.extension.controller.api.MidiOut;
-import com.tiesjan.bitwig_extensions.controllers.xone.hardware.XoneK2Hardware;
+import com.tiesjan.bitwig_extensions.controllers.xone_k2.hardware.XoneK2Hardware;
 import com.tiesjan.bitwig_extensions.shared.extension.ExtensionHardware;
 import com.tiesjan.bitwig_extensions.shared.hardware.HardwareContext;
 import com.tiesjan.bitwig_extensions.shared.midi.MidiChannel;
 
-public class XoneExtension extends ControllerExtension
+public class XoneK2Extension extends ControllerExtension
 {
     private final ControllerHost host;
     private final ControllerExtensionDefinition extensionDefinition;
@@ -24,9 +24,9 @@ public class XoneExtension extends ControllerExtension
 
     private MidiIn midiIn;
     private MidiOut midiOut;
-    private XoneExtensionPreferences preferences;
+    private XoneK2ExtensionPreferences preferences;
 
-    protected XoneExtension(final XoneExtensionDefinition definition, final ControllerHost host)
+    protected XoneK2Extension(final XoneK2ExtensionDefinition definition, final ControllerHost host)
     {
         super(definition, host);
 
@@ -41,7 +41,7 @@ public class XoneExtension extends ControllerExtension
     @Override
     public void init()
     {
-        this.preferences = new XoneExtensionPreferences(host.getPreferences());
+        this.preferences = new XoneK2ExtensionPreferences(host.getPreferences());
 
         this.midiIn = host.getMidiInPort(midiInPort);
         midiIn.setMidiCallback((ShortMidiMessageReceivedCallback)midiMessage -> onMidi(midiMessage));

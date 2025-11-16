@@ -1,4 +1,4 @@
-package com.tiesjan.bitwig_extensions.controllers.xone;
+package com.tiesjan.bitwig_extensions.controllers.xone_k2;
 
 import java.util.UUID;
 
@@ -7,11 +7,11 @@ import com.bitwig.extension.controller.AutoDetectionMidiPortNamesList;
 import com.bitwig.extension.controller.ControllerExtensionDefinition;
 import com.bitwig.extension.controller.api.ControllerHost;
 
-public class XoneExtensionDefinition extends ControllerExtensionDefinition
+public class XoneK2ExtensionDefinition extends ControllerExtensionDefinition
 {
    private static final UUID DRIVER_ID = UUID.fromString("cc1f6eac-8210-47cf-b1a8-e798c4f7d876");
 
-   public XoneExtensionDefinition()
+   public XoneK2ExtensionDefinition()
    {
    }
 
@@ -48,7 +48,7 @@ public class XoneExtensionDefinition extends ControllerExtensionDefinition
    @Override
    public String getHardwareModel()
    {
-      return "Xone PX5 + K2";
+      return "Xone:K2";
    }
 
    @Override
@@ -93,8 +93,8 @@ public class XoneExtensionDefinition extends ControllerExtensionDefinition
    }
 
    @Override
-   public XoneExtension createInstance(final ControllerHost host)
+   public XoneK2Extension createInstance(final ControllerHost host)
    {
-      return new XoneExtension(this, host);
+      return new XoneK2Extension(this, host);
    }
 }
